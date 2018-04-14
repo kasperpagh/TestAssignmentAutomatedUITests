@@ -12,9 +12,7 @@ import java.util.List;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
-/**
- * Created by marco on 14/04/2018.
- */
+
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class carTest
 {
@@ -23,34 +21,14 @@ public class carTest
     @BeforeClass
     public static void before()
     {
-        // Create a new instance of the Firefox driver
-        // Notice that the remainder of the code relies on the interface,
-        // not the implementation.
-        //driver = new HtmlUnitDriver();
+
         com.jayway.restassured.RestAssured.given().get("http://localhost:3000/reset");
 
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\kaspe\\Documents\\Skole\\sem2\\Test\\SeleniumExercise\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.get("http://localhost:3000/");
     }
-/*
-    @Test
-    public void xxxxx(){
 
-        driver.get("http://the-internet.herokuapp.com/login");
-        WebElement un = driver.findElement(By.name("username"));
-        WebElement pw = driver.findElement(By.name("password"));
-        un.sendKeys("tomsmith");
-        pw.sendKeys("SuperSecretPassword!");
-        pw.submit();
-        //System.out.println("Page title is: " + driver.getTitle());
-        Assert.assertTrue("http://the-internet.herokuapp.com/secure".equals(driver.getCurrentUrl()));
-
-
-        WebElement logout = driver.findElement(By.className("button"));
-        logout.click();
-        Assert.assertTrue("http://the-internet.herokuapp.com/login".equals(driver.getCurrentUrl()));
-    }*/
 
     @Test
     public void test1()
@@ -149,7 +127,6 @@ public class carTest
     @AfterClass
     public static void after()
     {
-        //Close the browser
         driver.quit();
     }
 }
